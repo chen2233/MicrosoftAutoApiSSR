@@ -16,16 +16,17 @@ import random
 filepath = Path.cwd() / os.environ["GIST_ID"] / os.environ["GIST_TEXT"]
 
 api_list = [
-    r'https://graph.microsoft.com/v1.0/me/drive/root',
-    r'https://graph.microsoft.com/v1.0/me/drive',
     r'https://graph.microsoft.com/v1.0/drive/root',
-    r'https://graph.microsoft.com/v1.0/users',
+    r'https://graph.microsoft.com/v1.0/me/drive',
+    r'https://graph.microsoft.com/v1.0/me/drive/recent',
+    r'https://graph.microsoft.com/v1.0/me/drive/root',
+    r'https://graph.microsoft.com/v1.0/me/drive/root/children',
     r'https://graph.microsoft.com/v1.0/me/messages',
     r'https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messageRules',
-    r'https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messageRules',
-    r'https://graph.microsoft.com/v1.0/me/drive/root/children',
     r'https://graph.microsoft.com/v1.0/me/mailFolders',
+    r'https://graph.microsoft.com/v1.0/me/onenote/sections',
     r'https://graph.microsoft.com/v1.0/me/outlook/masterCategories'
+    r'https://graph.microsoft.com/v1.0/users',
 ]
 
 
@@ -66,7 +67,9 @@ def main_invoke():
 
     try:
         for api_url in api_list:
-            time.sleep(random.randrange(2, 12))
+            if random.random() > 0.88:  # 12%几率不执行
+                continue
+            time.sleep(random.uniform(1, 10))
             if req.get(api_url, headers=headers).status_code == 200:
                 print("调用成功: ", api_url)
             else:
@@ -78,6 +81,6 @@ def main_invoke():
         pass
 
 
-for _ in range(random.randrange(3, 6)):
-    time.sleep(60 * random.randrange(1, 8))
+for _ in range(random.randint(4, 8)):  # 执行4-8次
+    time.sleep(random.uniform(100, 900))  # 间隔300-900s
     main_invoke()
