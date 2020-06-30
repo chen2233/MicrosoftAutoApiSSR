@@ -1,3 +1,7 @@
+# 置顶
+该项目是在 [InspAlgo/clockwork](https://github.com/InspAlgo/clockwork) 项目的基础上修改而来。调节了运行时间、调用的API的次数和概率。  
+以下为原介绍：
+
 # clockwork
 该项目是在 [wangziyingwen/AutoApiSecret](https://github.com/wangziyingwen/AutoApiSecret) 项目的基础上修改而来。原项目不能将 refresh_token 信息进行隐藏，本项目通过使用 GitHub 的私有 gist 来存储 refresh_token 信息，达到了将 refresh_token 隐藏的目的。
 
