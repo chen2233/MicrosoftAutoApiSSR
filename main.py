@@ -82,5 +82,5 @@ def main_invoke():
 
 
 for _ in range(random.randint(4, 8)):  # 执行4-8次
-    time.sleep(random.uniform(100, 900))  # 间隔300-900s
+    time.sleep(random.uniform(30, 600))  # 间隔30-600s
     main_invoke()
