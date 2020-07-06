@@ -25,7 +25,7 @@ api_list = [
     r'https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messageRules',
     r'https://graph.microsoft.com/v1.0/me/mailFolders',
     r'https://graph.microsoft.com/v1.0/me/onenote/sections',
-    r'https://graph.microsoft.com/v1.0/me/outlook/masterCategories'
+    r'https://graph.microsoft.com/v1.0/me/outlook/masterCategories',
     r'https://graph.microsoft.com/v1.0/users',
 ]
 
